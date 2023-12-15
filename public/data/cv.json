@@ -1,0 +1,53 @@
+{
+    "info": {
+        "info_name": "Lam",
+        "info_description": "Dev",
+        "info_p": "hello",
+        "info_sub_date": "1/1/2001",
+        "info_sub_name": "Hoang Ngoc Lam",
+        "info_sub_degree": "Ky su",
+        "info_sub_experience": "2 years",
+        "info_sub_phone": "123456789",
+        "info_sub_email": "nmt@gmail.com",
+        "info_sub_address": "Ha Noi",
+        "info_sub_free": "1"
+    },
+    "cards": [
+        {
+            "title": "1_1_1",
+            "value": 2
+        },
+        {
+            "title": "1_1_2",
+            "value": "Nawm"
+        },
+        {
+            "title": "1_1_3",
+            "value": "665"
+        },
+        {
+            "title": "1_1_4",
+            "value": "2"
+        },
+        {
+            "title": "1_1_5",
+            "value": "2 thanh tu"
+        },
+        {
+            "title": "1_1_6",
+            "value": "2 the a"
+        },
+        {
+            "title": "1_1_7",
+            "value": "2"
+        },
+        {
+            "title": "1_1_8",
+            "value": "2 nawms"
+        },
+        {
+            "title": "1_1_9",
+            "value": "2 1"
+        }
+    ]
+}
