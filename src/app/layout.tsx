@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { ReduxProviders } from "@/common/redux/provider";
 import Providers from "@/common/utils/provider";
 import Script from "next/script";
+import { ConfigProvider } from "antd";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -55,10 +56,27 @@ export default function RootLayout({
                 <Script src="/lib/lightbox/js/lightbox.min.js"></Script>
 
                 <Script src="/js/main.js"></Script>
+                <Script src="/js/slider.js"></Script>
             </head>
             <body className={inter.className}>
                 <ReduxProviders>
-                    <Providers>{children}</Providers>
+                    <Providers>
+                        <ConfigProvider
+                            theme={{
+                                token: {
+                                    colorBgContainer: "transparent",
+                                    colorText: "#fff",
+                                },
+                                components: {
+                                    Form: {
+                                        itemMarginBottom: 0,
+                                    },
+                                },
+                            }}
+                        >
+                            {children}
+                        </ConfigProvider>
+                    </Providers>
                 </ReduxProviders>
             </body>
         </html>

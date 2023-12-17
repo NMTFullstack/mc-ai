@@ -1,87 +1,31 @@
-import React from "react";
-import { Button, Checkbox, Form, Input, Modal } from "antd";
+"use client";
 
-const onFinish = (values: any) => {
-    console.log("Success:", values);
-};
+import Info_Template from "@/common/component/info";
+import { Col, Row } from "antd";
+import { useState } from "react";
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-};
-
-type FieldType = {
-    username?: string;
-    password?: string;
-    remember?: string;
-};
-
-const Info_Edit = ({ open, setOpen }: { open: boolean; setOpen: any }) => {
-    const handleOk = () => {
-        setOpen(false);
-    };
+export default function Info_Editor() {
+    const [info, setInfo] = useState({
+        info_name: "",
+        info_description: "",
+        info_p: "",
+        info_sub_date: "",
+        info_sub_name: "",
+        info_sub_degree: "",
+        info_sub_experience: "",
+        info_sub_phone: "",
+        info_sub_email: "",
+        info_sub_address: "",
+        info_sub_free: "",
+    });
     return (
-        <Modal
-            open={open}
-            onOk={handleOk}
-            onCancel={handleOk}
-            footer={false}
-            closeIcon={false}
-            style={{
-                minWidth: "600px",
-            }}
-        >
-            <Form
-                name="basic"
-                labelCol={{ span: 8 }}
-                wrapperCol={{ span: 16 }}
-                style={{ maxWidth: 600 }}
-                initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-            >
-                <Form.Item<FieldType>
-                    label="Username"
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your username!",
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
-
-                <Form.Item<FieldType>
-                    label="Password"
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your password!",
-                        },
-                    ]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-                <Form.Item<FieldType>
-                    name="remember"
-                    valuePropName="checked"
-                    wrapperCol={{ offset: 8, span: 16 }}
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                </Form.Item>
-            </Form>
-        </Modal>
+        <>
+            <Row>
+                <Col xs={24} sm={24} md={12} xl={12}></Col>
+                <Col xs={24} sm={24} md={12} xl={12}>
+                    <Info_Template info={info} />
+                </Col>
+            </Row>
+        </>
     );
-};
-
-export default Info_Edit;
+}

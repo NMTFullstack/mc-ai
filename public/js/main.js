@@ -42,8 +42,6 @@
     // Skills
     $(".skill").waypoint(
         function () {
-            console.log("Skill");
-
             $(".progress .progress-bar").each(function () {
                 $(this).css("width", $(this).attr("aria-valuenow") + "%");
             });
